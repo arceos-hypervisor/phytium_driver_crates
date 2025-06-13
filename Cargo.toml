@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "phytium_driver_block",
+]
+
+[workspace.package]
+version = "0.2.0"
+
+[workspace.dependencies]
+log = "0.4"
+rdrive = "0.13"

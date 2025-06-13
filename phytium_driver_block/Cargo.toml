@@ -1,0 +1,10 @@
+[package]
+name = "phytium_driver_block"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+phytium-mci = { git = "https://github.com/YanQD/phytium-mci.git", rev = "9e59816", default-features = false, features = ["pio"] }
+dma-api = { version = "0.2", features = ["alloc"] }
+log = "0.4.21"
+rdrive = { workspace = true }
