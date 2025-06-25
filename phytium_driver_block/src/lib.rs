@@ -4,7 +4,7 @@ extern crate alloc;
 
 pub use phytium_mci::{IoPad, Kernel, PAD_ADDRESS, sd::SdCard, set_impl};
 
-use log::info;
+use log::trace;
 
 use alloc::{format, vec::Vec};
 use core::{cell::UnsafeCell, cmp};
@@ -147,7 +147,7 @@ impl Interface for SdCardDriver {
     /// * `Ok(())` on success
     /// * `Err(io::Error)` if buffer is invalid or read operation fails
     fn read_block(&mut self, block_id: usize, buffer: &mut [u8]) -> Result<(), io::Error> {
-        info!("read block {}", block_id);
+        trace!("read block {}", block_id);
         let actual_block_id = block_id;
 
         Self::validate_buffer_alignment(buffer)?;
@@ -177,7 +177,7 @@ impl Interface for SdCardDriver {
     /// * `Ok(())` on success
     /// * `Err(io::Error)` if buffer is invalid or write operation fails
     fn write_block(&mut self, block_id: usize, buffer: &[u8]) -> Result<(), io::Error> {
-        info!("write block {}", block_id);
+        trace!("write block {}", block_id);
         let actual_block_id = block_id;
 
         Self::validate_buffer_alignment(buffer)?;
@@ -210,6 +210,6 @@ impl Interface for SdCardDriver {
     #[inline]
     fn block_size(&self) -> usize {
         let sd_card = unsafe { &*self.sdcard.get() };
-        sd_card.base().block_size as usize
+        sd_card.block_size() as usize
     }
 }
