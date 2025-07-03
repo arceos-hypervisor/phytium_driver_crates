@@ -179,11 +179,12 @@ checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
 [[package]]
 name = "phytium-mci"
 version = "0.1.0"
-source = "git+https://github.com/YanQD/phytium-mci.git?rev=74e2823#74e2823e60fa22852c5f8a80498a12301f16d91b"
+source = "git+https://github.com/YanQD/phytium-mci.git?rev=99c9ee5#99c9ee5f66490fbf41370be3b3d7a42cf4406b0c"
 dependencies = [
  "bare-test-macros",
  "bitflags",
  "bytemuck",
+ "dma-api",
  "lazy_static",
  "log",
  "nb",

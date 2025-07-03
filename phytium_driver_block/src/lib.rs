@@ -3,6 +3,7 @@
 extern crate alloc;
 
 pub use phytium_mci::{IoPad, Kernel, PAD_ADDRESS, sd::SdCard, set_impl};
+// pub use phytium_mci::{set_dma_impl, DmaImpl, DmaDirection};
 
 use log::trace;
 
@@ -10,9 +11,6 @@ use alloc::{format, vec::Vec};
 use core::{cell::UnsafeCell, cmp};
 use phytium_mci::mci_host::err::MCIHostError;
 use rdrive::{DriverGeneric, block::*};
-
-// pub use dma_api::{Direction, Impl as DmaImpl};
-// pub use dma_api::set_impl as set_dma_impl;
 
 const BLOCK_SIZE: usize = 512;
 
